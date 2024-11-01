@@ -1,0 +1,31 @@
+/* src/styles/global.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  h1, h2, h3 {
+    color: #008080;
+  }
+  
+  header, footer {
+    background-color: #008080;
+    color: white;
+    padding: 1rem;
+  }
+  
+  .container {
+    padding: 1rem 2rem;
+  }
+  
+  button {
+    background-color: #008080;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+  }
+  
