@@ -1,7 +1,41 @@
 ---
-import Layout from "../layouts/Layout.astro";
+// src/pages/index.astro
+
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import ContactForm from '../components/ContactForm.astro';
+import '../layouts/global.css';
+
 ---
 
-<Layout title="About">
+<Navbar />
 
-</Layout>
+<main class="container">
+  <section id="about">
+    <h1 class="font-bold">Acerca de nosotros</h1>
+    <li><a href="https://www.instagram.com/castilloclinicadental15?igsh=azJodXVoczZpczly">Visitar perfil</a></li>
+  </section>
+  <section>
+    <h2>MISION</h2>
+    <p>En Castillo Clinica Dental, nuestra misión es ofrecer atención dental de calidad en un ambiente cómodo y profesional. Nos dedicamos a brindar soluciones personalizadas para cada paciente, garantizando su salud bucal y bienestar a largo plazo.</p>
+    <h2>VISION</h2>
+    <p>Nuestra visión es ser la clínica dental líder en la región, ofreciendo tratamientos avanzados y tecnología de punta, siempre enfocados en la comodidad y satisfacción de nuestros pacientes. Creemos firmemente en valores como la honestidad, la integridad y la empatía, y trabajamos día a día para asegurarnos de que cada paciente se sienta cuidado y respetado.</p>
+    <h2>HISTORIA</h2>
+    <p>Fundada en 2024 por el Od. Israel Castillo, nuestra clínica comenzó con el objetivo de ofrecer atención dental de calidad y accesible para todos. Con más de 5 años de experiencia en el sector, hemos ayudado a miles de pacientes a mejorar su salud bucal y sonrisas.</p>
+    <h2>NUESTRO EQUIPO</h2>
+    <p>Nuestro equipo está formado por dentistas altamente capacitados y un personal comprometido que trabaja en conjunto para brindarte la mejor atención posible. El Dr. [Nombre], especialista en [especialidad], cuenta con más de [X] años de experiencia en el cuidado dental. Junto a él, nuestro equipo de higienistas y asistentes dentales se dedica a proporcionarte un trato cercano y amigable.</p>
+    <h2>TECNOLOGIA</h2>
+    <p>En Castillo Clinica Dental, estamos comprometidos con la innovación. Contamos con tecnología de última generación, como [nombre de la tecnología], que nos permite ofrecer diagnósticos más precisos y tratamientos más rápidos y eficaces. Todo esto, en un entorno seguro y cómodo para nuestros pacientes.</p>
+    <h2>NUESTRO COMPROMISO</h2>
+    <p>Nos enorgullece formar parte de esta comunidad. Además de ofrecer atención dental de calidad, colaboramos con organizaciones locales y participamos en campañas de salud bucal para promover la educación sobre el cuidado dental.</p>
+
+</section>
+
+<section id="contact">
+    <h2>Contáctanos</h2>
+    <p>Para agendar una cita o hacer una consulta, completa el siguiente formulario:</p>
+    <ContactForm />
+  </section>
+</main>
+
+<Footer />

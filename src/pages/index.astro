@@ -5,13 +5,14 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import ContactForm from '../components/ContactForm.astro';
 import '../layouts/global.css';
+
 ---
 
 <Navbar />
 
 <main class="container">
   <section id="about">
-    <h1 >Clinica Dental <strong style="color:#1961a9">Castillo</strong></h1>
+    <h1 class="font-bold">Clinica Dental <strong style="color:#1961a9">Castillo</strong></h1>
     <p>Ofrecemos servicios dentales de alta calidad para toda la familia. Nuestro equipo de profesionales se compromete a cuidar de tu salud dental y a brindarte la mejor atención posible.</p>
   </section>
 
@@ -25,12 +26,6 @@ import '../layouts/global.css';
       <li>Endodoncia</li>
       <li>Odontopediatria</li>
     </ul>
-  </section>
-
-  <section id="contact">
-    <h2>Contáctanos</h2>
-    <p>Para agendar una cita o hacer una consulta, completa el siguiente formulario:</p>
-    <ContactForm />
   </section>
 </main>
 
