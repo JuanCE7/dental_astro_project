@@ -8,9 +8,6 @@ export default {
         primary: "#2781C5",
         secondary: '#1A1A1A'
       },
-	  fontFamily: {
-        cormo: ['"cormorant-garamond"', 'serif'], // defines una familia "libre"
-      },
     },
   },
   plugins: [],
