@@ -1,9 +1,23 @@
-<section class="relative h-screen bg-black text-white">
-  <!-- <div>
-    
-    <h1 class="text-white">Cuidamos tus dientes</h1>
-    <h1 class="text-white">TRAEMOS SONRISAS SANAS</h1>
-</div> -->
+<section class="relative h-screen text-white">
+  <div class="absolute inset-0 z-0">
+    <video 
+      autoplay 
+      loop 
+      muted 
+      playsinline
+      class="w-full h-full object-cover"
+    >
+      <source src="/video/video1.mp4" type="video/mp4">
+      <!-- Imagen de respaldo en caso de que el video no cargue -->
+      <img 
+        src="/hero-bg.jpg" 
+        alt="Dental clinic background" 
+        class="w-full h-full object-cover"
+      />
+    </video>
+    <!-- Overlay para mejorar la legibilidad del texto -->
+    <div class="absolute inset-0 bg-black/40"></div>
+  </div>
 
   <div class="relative container mx-auto px-4 h-full flex items-center">
     <div class="max-w-2xl">
