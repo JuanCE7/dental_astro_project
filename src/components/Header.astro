@@ -1,21 +1,60 @@
-<header class="max-w-[1800px] mx-auto p-8 flex justify-between items-center">
-    <div class="flex">
+---
+---
+<nav class="fixed w-full bg-white/90 backdrop-blur-sm z-50 shadow-sm">
+  <div class="container mx-auto px-4">
+    <div class="flex items-center justify-between h-28">
+      <!-- Logo -->
+      <a href="/" class="flex items-center">
         <img src="/logo-2.svg" alt="logo-1" class="w-auto h-[70px]">
         <img src="/logo-1.svg" alt="logo-2" class="w-auto h-[65px]">
+      </a>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="#about" class="text-gray-700 hover:text-primary font-cormo text-xl">Nosotros</a>
+        <a href="#services" class="text-gray-700 hover:text-primary font-cormo text-xl">Servicios</a>
+        <a href="#contact" class="text-gray-700 hover:text-primary font-cormo text-xl">Contacto</a>
+        <a href="#agendar" class="bg-primary hover:bg-primary/90 text-xl text-white px-4 py-2 font-cormo">
+          Agenda Ya!
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-button" class="md:hidden text-gray-700" aria-label="Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
     </div>
-    <a class="font-cormo text-lg " href="#">
-        SERVICIOS
-    </a>
-    <a class="font-cormo text-lg" href="#">
-        NOSOTROS
-    </a>
-    <a class="font-cormo text-lg" href="#">
-        PACIENTES
-    </a>
-    <p class="font-cormo text-lg ">
-        (+593 98 765 4321)
-    </p>
-    <a class=" font-cormo text-xl  bg-primary py-2 px-4 text-white hover:contrast-200 transition" href="#">
-        Agenda una cita
-    </a>
-</header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden pb-6">
+      <div class="flex flex-col space-y-4">
+        <a href="#about" class="text-gray-700 hover:text-primary">Nosotros</a>
+        <a href="#services" class="text-gray-700 hover:text-primary">Servicios</a>
+        <a href="#contact" class="text-gray-700 hover:text-primary">Contacto</a>
+        <a href="#agendar" class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-full text-center">
+          Agenda Ya!
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (mobileMenuButton && mobileMenu) {
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close menu when clicking on a link
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  }
+</script>
