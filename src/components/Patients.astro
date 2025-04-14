@@ -43,6 +43,7 @@ const cases = [
     height: 400px;
     margin: 0 auto;
     max-width: 100%;
+    position: relative;
   }
   
   .image-compare img {
@@ -60,19 +61,25 @@ const cases = [
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     padding: 1rem;
   }
+  
+  /* Asegurarse de que los controles no activen otros eventos */
+  :global(.icv__control) {
+    pointer-events: auto !important;
+    z-index: 10;
+  }
 </style>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/image-compare-viewer/dist/image-compare-viewer.min.css">
 
 <script>
-  // Importamos la biblioteca de forma adecuada
+  // Importamos la biblioteca
   import ImageCompare from 'image-compare-viewer';
   
   // Ejecutamos después de que el contenido esté cargado
   document.addEventListener('DOMContentLoaded', () => {
     const viewers = document.querySelectorAll(".image-compare");
     viewers.forEach(element => {
-      new ImageCompare(element, {
+      const viewer = new ImageCompare(element, {
         controlColor: "#FFFFFF",
         controlShadow: true,
         addCircle: true,
@@ -82,8 +89,34 @@ const cases = [
           before: 'Antes',
           after: 'Después',
           onHover: false
+        },
+        // Asegúrate de inicializar con eventos personalizados
+        onInit: (instance) => {
+          // Cuando el componente esté inicializado, añadimos eventos
+          setTimeout(() => {
+            const control = element.querySelector(".icv__control");
+            if (control) {
+              control.addEventListener("click", (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+              });
+              
+              control.addEventListener("mousedown", (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+              });
+            }
+          }, 100);
         }
       }).mount();
     });
   });
+
+  // Prevenir que los clics en el divisor se propaguen
+  document.addEventListener('click', function(e) {
+    if (e.target.closest('.icv__control')) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+  }, true);
 </script>
