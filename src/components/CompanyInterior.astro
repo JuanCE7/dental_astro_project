@@ -1,65 +1,72 @@
 ---
 const interiores = [
   {
-    title: 'f1',
-    image: '/interior/f2.jpg'
+    title: "f2",
+    image: "/interior/f5.jpg",
   },
   {
-    title: 'f2',
-    image: '/interior/f5.jpg'
+    title: "f1",
+    image: "/interior/f2.jpg",
   },
   {
-    title: 'f3',
-    image: '/interior/f7.jpg'
+    title: "f3",
+    image: "/interior/f7.jpg",
   },
   {
-    title: 'f4',
-    image: '/interior/f8.jpg'
+    title: "f4",
+    image: "/interior/f8.jpg",
   },
   {
-    title: 'f5',
-    image: '/interior/f9.jpg'
+    title: "f5",
+    image: "/interior/f9.jpg",
   },
   {
-    title: 'f6',
-    image: '/interior/f10.jpg'
+    title: "f6",
+    image: "/interior/f10.jpg",
   },
   {
-    title: 'f7',
-    image: '/interior/f11.jpg'
+    title: "f7",
+    image: "/interior/f11.jpg",
   },
   {
-    title: 'f8',
-    image: '/interior/f12.jpg'
+    title: "f8",
+    image: "/interior/f12.jpg",
   },
   {
-    title: 'f9',
-    image: '/interior/f13.jpg'
+    title: "f9",
+    image: "/interior/f13.jpg",
   },
   {
-    title: 'f10',
-    image: '/interior/f14.jpg'
+    title: "f10",
+    image: "/interior/f14.jpg",
   },
   {
-    title: 'f11',
-    image: '/interior/f16.jpg'
+    title: "f11",
+    image: "/interior/f16.jpg",
   },
   {
-    title: 'f12',
-    image: '/interior/f17.jpg'
+    title: "f12",
+    image: "/interior/f17.jpg",
   },
 ];
 ---
+
 <section id="interior" class="py-20 bg-white">
   <h2 class="text-3xl font-bold text-center mb-12">NUESTRAS INSTALACIONES</h2>
   <div class="container mx-auto px-4">
     <div class="swiper clinic-carousel">
       <div class="swiper-wrapper">
-        {interiores.map(interior => (
-        <div class="swiper-slide">
-          <img src={interior.image} alt="Clínica 1" class="w-full h-96 object-cover rounded-lg" />
-        </div>
-         ))}
+        {
+          interiores.map((interior) => (
+            <div class="swiper-slide">
+              <img
+                src={interior.image}
+                alt="Clínica 1"
+                class="w-full h-96 object-cover rounded-lg"
+              />
+            </div>
+          ))
+        }
       </div>
       <div class="swiper-pagination"></div>
     </div>
@@ -67,12 +74,12 @@ const interiores = [
 </section>
 
 <script>
-  import Swiper from 'swiper';
-  import { Pagination, Autoplay } from 'swiper/modules';
-  import 'swiper/css';
-  import 'swiper/css/pagination';
+  import Swiper from "swiper";
+  import { Pagination, Autoplay } from "swiper/modules";
+  import "swiper/css";
+  import "swiper/css/pagination";
 
-  new Swiper('.clinic-carousel', {
+  new Swiper(".clinic-carousel", {
     modules: [Pagination, Autoplay],
     slidesPerView: 1,
     spaceBetween: 30,
@@ -82,7 +89,7 @@ const interiores = [
       disableOnInteraction: false,
     },
     pagination: {
-      el: '.swiper-pagination',
+      el: ".swiper-pagination",
       clickable: true,
     },
     breakpoints: {
