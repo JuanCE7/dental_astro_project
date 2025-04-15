@@ -28,10 +28,11 @@ const services = [
 ---
 <section id="treatments">
   <div class="mx-auto ">
-    <h2 class="text-3xl font-bold text-center mb-12">NUESTROS TRATAMIENTOS</h2>
+    <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">NUESTROS TRATAMIENTOS</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-      {services.map(service => (
-        <div class="relative group overflow-hidden">
+      {services.map((service, index) => (
+        <div class="relative group overflow-hidden" data-aos="fade-up"
+          data-aos-delay={index * 100}>
           <img 
             src={service.image} 
             alt={service.title}

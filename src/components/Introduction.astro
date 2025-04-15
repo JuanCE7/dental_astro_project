@@ -20,19 +20,19 @@ const defaultMessage = "Hola, me gustaría agendar una cita.";
 
   <div class="relative container mx-auto px-4 h-full flex items-center">
     <div class="max-w-2xl">
-      <h1 class="text-5xl font-bold mb-6">Cuidamos tus dientes</h1>
-      <p class="text-3xl mb-8">TRAEMOS SONRISAS SANAS</p>
-      <div class="flex gap-4">
+      <h1 class="text-5xl font-bold mb-6" data-aos="fade-up">Cuidamos tus dientes</h1>
+      <p class="text-3xl mb-8" data-aos="fade-up" data-aos-delay="100">TRAEMOS SONRISAS SANAS</p>
+      <div class="flex gap-4" data-aos="fade-up" data-aos-delay="200">
         <a
           href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(defaultMessage)}`}
           target="_blank"
-          class="bg-primary hover:contrast-200 text-white px-4 py-2 rounded-full"
+          class="bg-primary hover:contrast-200 text-white px-4 py-2 rounded-full transition-colors"
         >
           Agenda Ya!
         </a>
         <a
           href={`tel:+${phoneNumber}`}
-          class="bg-white hover:bg-gray-100 text-secondary px-4 py-2 rounded-full"
+          class="bg-white hover:bg-gray-100 text-secondary px-4 py-2 rounded-full transition-colors"
         >
           LLAMA AL +593 98 049 7664
         </a>
