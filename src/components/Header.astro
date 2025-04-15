@@ -1,31 +1,60 @@
 ---
+const phoneNumber = "593980497664";
+const defaultMessage = "Hola, me gustaría agendar una cita.";
 ---
+
 <nav class="fixed w-full bg-white/90 backdrop-blur-sm z-50 shadow-sm">
   <div class="container mx-auto px-4">
     <div class="flex items-center justify-between h-28">
       <!-- Logo -->
       <a href="/" class="flex items-center">
-        <img src="/logo-2.svg" alt="logo-1" class="w-auto h-[70px]">
-        <img src="/logo-1.svg" alt="logo-2" class="w-auto h-[65px]">
+        <img src="/logo-2.svg" alt="logo-1" class="w-auto h-[70px]" />
+        <img src="/logo-1.svg" alt="logo-2" class="w-auto h-[65px]" />
       </a>
 
       <!-- Desktop Menu -->
       <div class="hidden md:flex items-center space-x-8">
         <a href="#about" class="text-gray-700 hover:text-primary">Nosotros</a>
-        <a href="#treatments" class="text-gray-700 hover:text-primary">Tratamientos</a>
-        <a href="#interior" class="text-gray-700 hover:text-primary">Instalaciones</a>
-        <a href="#patients" class="text-gray-700 hover:text-primary">Pacientes</a>
-        <a href="#location" class="text-gray-700 hover:text-primary">Ubicación</a>
+        <a href="#treatments" class="text-gray-700 hover:text-primary"
+          >Tratamientos</a
+        >
+        <a href="#interior" class="text-gray-700 hover:text-primary"
+          >Instalaciones</a
+        >
+        <a href="#patients" class="text-gray-700 hover:text-primary"
+          >Pacientes</a
+        >
+        <a href="#location" class="text-gray-700 hover:text-primary"
+          >Ubicación</a
+        >
         <a href="#contact" class="text-gray-700 hover:text-primary">Contacto</a>
-        <a href="#agendar" class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-full">
+        <a
+          href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(defaultMessage)}`}
+          target="_blank"
+          class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-full"
+        >
           Agenda Ya!
         </a>
       </div>
 
       <!-- Mobile Menu Button -->
-      <button id="mobile-menu-button" class="md:hidden text-gray-700" aria-label="Menu">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      <button
+        id="mobile-menu-button"
+        class="md:hidden text-gray-700"
+        aria-label="Menu"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
       </button>
     </div>
@@ -34,12 +63,24 @@
     <div id="mobile-menu" class="hidden md:hidden pb-6">
       <div class="flex flex-col space-y-4">
         <a href="#about" class="text-gray-700 hover:text-primary">Nosotros</a>
-        <a href="#treatments" class="text-gray-700 hover:text-primary">Tratamientos</a>
-        <a href="#interior" class="text-gray-700 hover:text-primary">Instalaciones</a>
-        <a href="#patients" class="text-gray-700 hover:text-primary">Pacientes</a>
-        <a href="#location" class="text-gray-700 hover:text-primary">Ubicación</a>
+        <a href="#treatments" class="text-gray-700 hover:text-primary"
+          >Tratamientos</a
+        >
+        <a href="#interior" class="text-gray-700 hover:text-primary"
+          >Instalaciones</a
+        >
+        <a href="#patients" class="text-gray-700 hover:text-primary"
+          >Pacientes</a
+        >
+        <a href="#location" class="text-gray-700 hover:text-primary"
+          >Ubicación</a
+        >
         <a href="#contact" class="text-gray-700 hover:text-primary">Contacto</a>
-        <a href="#agendar" class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-full text-center">
+        <a
+          href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(defaultMessage)}`}
+          target="_blank"
+          class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-full text-center"
+        >
           Agenda Ya!
         </a>
       </div>
@@ -48,18 +89,18 @@
 </nav>
 
 <script>
-  const mobileMenuButton = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileMenuButton = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
 
   if (mobileMenuButton && mobileMenu) {
-    mobileMenuButton.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
+    mobileMenuButton.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
     });
 
     // Close menu when clicking on a link
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
       });
     });
   }

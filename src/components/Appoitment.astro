@@ -1,47 +1,64 @@
+---
+const phoneNumber = "593980497664";
+const defaultMessage = "Hola, me gustaría agendar una cita.";
+---
+
 <section class="py-20 bg-white" id="contact">
   <div class="container mx-auto px-4">
     <h2 class="text-3xl font-bold text-center mb-12">CONTÁCTANOS</h2>
 
-    <div class="flex flex-wrap -mx-4">
+    <div class="flex flex-wrap -mx-4 bg-gray-50">
       <div class="w-full lg:w-1/2 px-4">
-        <form class="bg-gray-50 p-8 rounded-lg">
+        <form id="contactForm" class="bg-gray-50 p-8 rounded-lg">
           <div class="mb-6">
-            <input
-              type="text"
-              placeholder="NOMBRE"
+            <input 
+              type="text" 
+              id="name"
+              name="name"
+              placeholder="NOMBRE" 
               class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-primary"
+              required
             />
           </div>
           <div class="mb-6">
-            <input
-              type="tel"
-              placeholder="CELULAR"
+            <input 
+              type="tel" 
+              id="phone"
+              name="phone"
+              placeholder="CELULAR" 
               class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-primary"
+              required
             />
           </div>
           <div class="mb-6">
-            <input
-              type="email"
-              placeholder="CORREO"
+            <input 
+              type="email" 
+              id="email"
+              name="email"
+              placeholder="CORREO" 
               class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-primary"
+              required
             />
           </div>
           <div class="mb-6">
-            <textarea
-              placeholder="MENSAJE"
-              rows="4"
+            <textarea 
+              id="message"
+              name="message"
+              placeholder="MENSAJE" 
+              rows="4" 
               class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-primary"
+              required
             ></textarea>
           </div>
-          <button
-            type="submit"
+          <button 
+            type="submit" 
             class="w-full bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full"
           >
             ENVIAR
           </button>
         </form>
       </div>
-      <div class="w-50 h-64 lg:w-1/2 rounded-lg">
+      <div class="w-full h-full lg:w-1/2 p-8 flex justify-center">
         <img
           src="/contact.jpg"
           alt="Doctor"
@@ -53,3 +70,26 @@
     </div>
   </div>
 </section>
+
+<script define:vars={{ phoneNumber, defaultMessage }}>
+  document
+    .getElementById("contactForm")
+    .addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const phone = document.getElementById("phone").value;
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message").value;
+
+      const whatsappMessage = `
+Nombre: ${name}
+Teléfono: ${phone}
+Correo: ${email}
+Mensaje: ${message}
+    `.trim();
+
+      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+      window.open(whatsappUrl, "_blank");
+    });
+</script>

@@ -1,17 +1,16 @@
+---
+const phoneNumber = "593980497664";
+const defaultMessage = "Hola, me gustaría agendar una cita.";
+---
+
 <section class="relative h-screen text-white">
   <div class="absolute inset-0 z-0">
-    <video 
-      autoplay 
-      loop 
-      muted 
-      playsinline
-      class="w-full h-full object-cover"
-    >
-      <source src="/video/video1.mp4" type="video/mp4">
+    <video autoplay loop muted playsinline class="w-full h-full object-cover">
+      <source src="/video/video1.mp4" type="video/mp4" />
       <!-- Imagen de respaldo en caso de que el video no cargue -->
-      <img 
-        src="/services/ortodoncia.jpg" 
-        alt="Dental clinic background" 
+      <img
+        src="/services/ortodoncia.jpg"
+        alt="Dental clinic background"
         class="w-full h-full object-cover"
       />
     </video>
@@ -25,13 +24,14 @@
       <p class="text-3xl mb-8">TRAEMOS SONRISAS SANAS</p>
       <div class="flex gap-4">
         <a
-          href="#agendar"
+          href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(defaultMessage)}`}
+          target="_blank"
           class="bg-primary hover:contrast-200 text-white px-4 py-2 rounded-full"
         >
           Agenda Ya!
         </a>
         <a
-          href="tel:+593980497664"
+          href={`tel:+${phoneNumber}`}
           class="bg-white hover:bg-gray-100 text-secondary px-4 py-2 rounded-full"
         >
           LLAMA AL +593 98 049 7664
