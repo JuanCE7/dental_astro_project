@@ -22,6 +22,7 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
+    <div id="cursor"></div>
     <Header />
     <main>
       <slot />
@@ -33,6 +34,31 @@ const { title } = Astro.props;
         duration: 1000,
         once: true,
         offset: 100,
+      });
+
+      // Custom cursor
+      document.addEventListener("DOMContentLoaded", () => {
+        const cursor = document.getElementById("cursor");
+
+        document.addEventListener("mousemove", (e) => {
+          cursor.style.left = e.clientX + "px";
+          cursor.style.top = e.clientY + "px";
+        });
+
+        // Add hover effect for interactive elements
+        const interactiveElements = document.querySelectorAll(
+          'a, button, input, textarea, [role="button"]'
+        );
+
+        interactiveElements.forEach((el) => {
+          el.addEventListener("mouseenter", () => {
+            cursor.classList.add("cursor-hover");
+          });
+
+          el.addEventListener("mouseleave", () => {
+            cursor.classList.remove("cursor-hover");
+          });
+        });
       });
     </script>
   </body>
@@ -49,7 +75,22 @@ const { title } = Astro.props;
   select:focus-visible {
     outline: 0;
   }
+  #cursor {
+    width: 25px;
+    height: 25px;
+    background: rgba(43, 130, 188, 0.527);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.2s ease;
+    transform: translate(-50%, -50%);
+  }
 
+  .cursor-hover {
+    transform: translate(-50%, -50%) scale(1.5) !important;
+    background: rgba(43, 130, 188, 0.527) !important;
+  }
   html {
     scroll-behavior: smooth;
   }
@@ -59,5 +100,14 @@ const { title } = Astro.props;
   }
   html {
     scroll-padding-top: 5rem;
+  }
+  @media (hover: none) {
+    #cursor {
+      display: none;
+    }
+
+    body {
+      cursor: auto;
+    }
   }
 </style>
