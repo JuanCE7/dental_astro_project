@@ -1,60 +1,267 @@
 ---
 const services = [
   {
-    title: 'ENDODONCIA',
-    image: '/services/endodoncia.jpg'
+    title: "ENDODONCIA",
+    image: "/services/endodoncia.webp",
+    description:
+      "La endodoncia es un tratamiento que salva dientes dañados o infectados. Este procedimiento elimina la pulpa dental dañada y sella el conducto radicular.",
+    steps: [
+      "Diagnóstico y radiografía",
+      "Anestesia local para mayor comodidad",
+      "Remoción del tejido dañado",
+      "Limpieza y desinfección de conductos",
+      "Sellado permanente",
+    ],
+    benefits: [
+      "Salva el diente natural",
+      "Elimina el dolor",
+      "Previene infecciones futuras",
+      "Restaura la función masticatoria",
+    ],
   },
   {
-    title: 'ORTODONCIA',
-    image: '/services/ortodoncia.jpg'
+    title: "ORTODONCIA",
+    image: "/services/ortodoncia.webp",
+    description:
+      "La ortodoncia corrige la posición de los dientes y la mandíbula para mejorar la sonrisa y la función oral.",
+    steps: [
+      "Evaluación inicial y plan de tratamiento",
+      "Colocación de brackets o alineadores",
+      "Ajustes periódicos",
+      "Monitoreo del progreso",
+      "Retención post-tratamiento",
+    ],
+    benefits: [
+      "Mejora la estética dental",
+      "Facilita la higiene oral",
+      "Corrige problemas de mordida",
+      "Previene problemas futuros",
+    ],
   },
   {
-    title: 'LIMPIEZA DENTAL',
-    image: '/services/limpieza-dental.jpg'
+    title: "LIMPIEZA DENTAL",
+    image: "/services/limpieza-dental.webp",
+    description:
+      "La limpieza dental profesional elimina la placa y el sarro acumulados, manteniendo sus dientes y encías saludables.",
+    steps: [
+      "Evaluación de la salud oral",
+      "Eliminación de placa y sarro",
+      "Pulido dental",
+      "Aplicación de flúor",
+      "Recomendaciones de higiene",
+    ],
+    benefits: [
+      "Previene caries y enfermedades",
+      "Elimina manchas superficiales",
+      "Mejora el aliento",
+      "Mantiene encías saludables",
+    ],
   },
   {
-    title: 'RESTAURACIONES',
-    image: '/services/restauraciones.jpg'
+    title: "RESTAURACIONES",
+    image: "/services/restauraciones.webp",
+    description:
+      "Las restauraciones dentales devuelven la forma y función natural a dientes dañados o con caries.",
+    steps: [
+      "Diagnóstico y plan de tratamiento",
+      "Eliminación del tejido dañado",
+      "Preparación de la superficie",
+      "Aplicación del material restaurador",
+      "Pulido final",
+    ],
+    benefits: [
+      "Restaura la función masticatoria",
+      "Previene daños mayores",
+      "Mejora la estética dental",
+      "Resultados duraderos",
+    ],
   },
   {
-    title: 'PRÓTESIS',
-    image: '/services/implantes.jpg'
+    title: "IMPLANTES",
+    image: "/services/implantes.webp",
+    description:
+      "Los implantes dentales son raíces artificiales que sostienen dientes de reemplazo, ofreciendo una solución permanente para dientes perdidos.",
+    steps: [
+      "Evaluación y planificación",
+      "Colocación del implante",
+      "Período de oseointegración",
+      "Colocación de la corona",
+      "Seguimiento",
+    ],
+    benefits: [
+      "Apariencia natural",
+      "Función similar al diente natural",
+      "Solución permanente",
+      "Preserva el hueso",
+    ],
   },
   {
-    title: 'DISEÑO DE SONRISA',
-    image: '/services/diseno-sonrisa.jpg'
+    title: "DISEÑO DE SONRISA",
+    image: "/services/diseno-sonrisa.webp",
+    description:
+      "El diseño de sonrisa es un proceso personalizado que transforma su sonrisa considerando la estética facial y sus preferencias.",
+    steps: [
+      "Análisis facial y dental",
+      "Diseño digital de la sonrisa",
+      "Presentación del plan",
+      "Procedimientos estéticos",
+      "Revisión final",
+    ],
+    benefits: [
+      "Sonrisa personalizada",
+      "Mayor confianza",
+      "Resultados predecibles",
+      "Mejora la armonía facial",
+    ],
   },
   {
-    title: 'ODONTOPEDIATRÍA',
-    image: '/services/odontopediatria.jpg'
+    title: "ODONTOPEDIATRÍA",
+    image: "/services/odontopediatria.webp",
+    description:
+      "Especialidad dedicada al cuidado de la salud bucal de los niños, desde bebés hasta adolescentes, en un ambiente amigable y seguro.",
+    steps: [
+      "Primera visita y familiarización",
+      "Evaluación del desarrollo dental",
+      "Prevención de caries",
+      "Tratamientos adaptados a niños",
+      "Educación en higiene bucal",
+    ],
+    benefits: [
+      "Experiencia dental positiva",
+      "Prevención temprana",
+      "Desarrollo dental saludable",
+      "Técnicas especiales para niños",
+    ],
   },
   {
-    title: 'CIRUGÍA ORAL',
-    image: '/services/cirugia.jpg'
+    title: "CIRUGÍA ORAL",
+    image: "/services/cirugia.webp",
+    description:
+      "Procedimientos quirúrgicos especializados para tratar condiciones complejas de la cavidad oral y maxilofacial.",
+    steps: [
+      "Evaluación y diagnóstico detallado",
+      "Plan quirúrgico personalizado",
+      "Procedimiento con anestesia",
+      "Cuidados post-operatorios",
+      "Seguimiento de recuperación",
+    ],
+    benefits: [
+      "Solución definitiva",
+      "Tecnología avanzada",
+      "Recuperación optimizada",
+      "Resultados duraderos",
+    ],
   },
   {
-    title: 'BLANQUEAMIENTO',
-    image: '/services/blanqueamiento.jpg'
-  }
+    title: "BLANQUEAMIENTO",
+    image: "/services/blanqueamiento.webp",
+    description:
+      "Tratamiento estético profesional para aclarar el color de los dientes y lograr una sonrisa más brillante y atractiva.",
+    steps: [
+      "Evaluación del tono actual",
+      "Limpieza dental previa",
+      "Aplicación del agente blanqueador",
+      "Activación con luz LED",
+      "Recomendaciones post-tratamiento",
+    ],
+    benefits: [
+      "Resultados inmediatos",
+      "Procedimiento seguro",
+      "Sonrisa más brillante",
+      "Mayor confianza",
+    ],
+  },
 ];
+
+import TreatmentModal from "./TreatmentModal";
 ---
-<section id="treatments">
-  <div class="mx-auto ">
-    <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">NUESTROS TRATAMIENTOS</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-      {services.map((service, index) => (
-        <div class="relative group overflow-hidden" data-aos="fade-up"
-          data-aos-delay={index * 100}>
-          <img 
-            src={service.image} 
-            alt={service.title}
-            class="w-full h-96 object-cover transition-transform group-hover:scale-110"
-          />
-          <div class="absolute inset-0 bg-black/50 flex items-end pb-6 pl-6">
-            <h3 class="text-white text-4xl ">{service.title}</h3>
-          </div>
+
+<section class="py-20 bg-gray-50" id="treatments">
+  <div class="container mx-auto px-4">
+    <h2
+      class="text-4xl font-bold text-center mb-4"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
+      NUESTROS TRATAMIENTOS
+    </h2>
+    <p
+      class="text-center mb-12 text-lg max-w-2xl mx-auto"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-delay="200"
+    >
+      Ofrecemos una amplia gama de servicios dentales utilizando tecnología de
+      vanguardia y técnicas modernas
+    </p>
+    <div class="mb-16 text-center" data-aos="fade-up" data-aos-duration="1000">
+      <div class="flex justify-center items-center space-x-8 mb-8">
+        <div class="text-center">
+          <div class="text-4xl font-bold text-primary mb-2">98%</div>
+          <p class="text-cyan-600">Satisfacción del paciente</p>
         </div>
-      ))}
+        <div class="text-center">
+          <div class="text-4xl font-bold text-primary mb-2">3000+</div>
+          <p class="text-cyan-600">Pacientes atendidos</p>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl font-bold text-primary mb-2">6+</div>
+          <p class="text-cyan-600">Años de experiencia</p>
+        </div>
+      </div>
+      <div class="flex justify-center items-center space-x-2">
+        {
+          [1, 2, 3, 4, 5].map(() => (
+            <svg
+              class="w-6 h-6 text-yellow-400"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+          ))
+        }
+        <span class="ml-2 text-cyan-600"
+          >4.8/5 basado en más de 500 reseñas</span
+        >
+      </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        services.map((service, index) => (
+          <div
+            class="relative group overflow-hidden rounded-2xl cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay={index * 100}
+            onclick={`window.openTreatmentModal(${JSON.stringify(service)})`}
+          >
+            <img
+              src={service.image}
+              alt={service.title}
+              class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-cyan-900/80 to-transparent flex items-end p-6 transform transition-transform duration-500">
+              <div>
+                <h3 class="text-white text-2xl font-bold mb-2">
+                  {service.title}
+                </h3>
+                <p class="text-sand-100 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  {service.description.substring(0, 100)}...
+                </p>
+              </div>
+            </div>
+          </div>
+        ))
+      }
     </div>
   </div>
+  <TreatmentModal client:load />
 </section>
+
+<script>
+  window.openTreatmentModal = (service) => {
+    const event = new CustomEvent("openModal", { detail: service });
+    document.dispatchEvent(event);
+  };
+</script>

@@ -9,11 +9,12 @@ const defaultMessage = "Hola, me gustaría agendar una cita.";
       <!-- Logo -->
       <a href="/" class="flex items-center">
         <img src="/logo-2.svg" alt="logo-1" class="w-auto h-[70px]" />
-        <img src="/logo-1.svg" alt="logo-2" class="w-auto h-[65px]" />
+        <img src="/logo-1.svg" alt="logo-2" class="hidden xl:block w-auto h-[65px]" />
+        <img src="/logo-1.svg" alt="logo-2" class="block lg:hidden w-auto h-[65px]" />
       </a>
 
       <!-- Desktop Menu -->
-      <div class="hidden md:flex items-center space-x-8">
+      <div class="hidden lg:flex items-center space-x-8">
         <a href="#about" class="text-gray-700 hover:text-primary">Nosotros</a>
         <a href="#treatments" class="text-gray-700 hover:text-primary"
           >Tratamientos</a
@@ -31,7 +32,7 @@ const defaultMessage = "Hola, me gustaría agendar una cita.";
         <a
           href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(defaultMessage)}`}
           target="_blank"
-          class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-full"
+          class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-full transition-all duration-300 transform hover:scale-105"
         >
           Agenda Ya!
         </a>
@@ -40,7 +41,7 @@ const defaultMessage = "Hola, me gustaría agendar una cita.";
       <!-- Mobile Menu Button -->
       <button
         id="mobile-menu-button"
-        class="md:hidden text-gray-700"
+        class="lg:hidden text-gray-700"
         aria-label="Menu"
       >
         <svg
