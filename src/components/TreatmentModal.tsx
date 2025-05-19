@@ -1,14 +1,14 @@
 import { Fragment, useState, useEffect } from 'react'
-import { Dialog, Transition } from '@headlessui/react'
+import { Dialog, DialogPanel, DialogTitle, Transition, TransitionChild } from '@headlessui/react'
 
 export default function TreatmentModal() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isShowing, setIsShowing] = useState(false)
   const [treatment, setTreatment] = useState(null)
 
   useEffect(() => {
-    const handleOpenModal = (event) => {
+    const handleOpenModal = (event: any) => {
       setTreatment(event.detail)
-      setIsOpen(true)
+      setIsShowing(true)
     }
 
     document.addEventListener('openModal', handleOpenModal)
@@ -16,15 +16,15 @@ export default function TreatmentModal() {
   }, [])
 
   function closeModal() {
-    setIsOpen(false)
+    setIsShowing(false)
   }
 
   if (!treatment) return null
 
   return (
-    <Transition appear show={isOpen} as={Fragment}>
+    <Transition show={isShowing} as={Fragment}>
       <Dialog as="div" className="relative z-50" onClose={closeModal}>
-        <Transition.Child
+        <TransitionChild
           as={Fragment}
           enter="ease-out duration-300"
           enterFrom="opacity-0"
@@ -34,11 +34,11 @@ export default function TreatmentModal() {
           leaveTo="opacity-0"
         >
           <div className="fixed inset-0 bg-cyan-900/50 backdrop-blur-sm" />
-        </Transition.Child>
+        </TransitionChild>
 
         <div className="fixed inset-0 overflow-y-auto">
           <div className="flex min-h-full items-center justify-center p-4">
-            <Transition.Child
+            <TransitionChild
               as={Fragment}
               enter="ease-out duration-300"
               enterFrom="opacity-0 scale-95"
@@ -47,30 +47,30 @@ export default function TreatmentModal() {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="w-full max-w-2xl transform overflow-hidden rounded-2xl bg-sand-50 p-6 text-left align-middle shadow-xl transition-all">
+              <DialogPanel className="w-full max-w-2xl transform overflow-hidden rounded-2xl bg-sand-50 p-6 text-left align-middle shadow-xl transition-all">
                 <div className="relative h-64 mb-6">
                   <img
-                    src={treatment.image}
-                    alt={treatment.title}
+                    src={treatment?.image}
+                    alt={treatment?.title}
                     className="absolute inset-0 w-full h-full object-cover rounded-xl"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/90 to-transparent flex items-end p-6">
-                    <Dialog.Title
+                    <DialogTitle
                       as="h3"
                       className="text-3xl font-bold text-white"
                     >
                       {treatment.title}
-                    </Dialog.Title>
+                    </DialogTitle>
                   </div>
                 </div>
 
                 <div className="mt-4">
-                  <p className="text-cyan-700 mb-8 text-lg">{treatment.description}</p>
+                  <p className="text-cyan-700 mb-8 text-lg">{treatment?.description}</p>
 
                   <div className="mb-8">
-                    <h4 className="text-2xl font-semibold text-primary mb-4">Proceso del Tratamiento</h4>
+                    <h4 className="text-2xl font-semibold text-cyan-800 mb-4">Proceso del Tratamiento</h4>
                     <ul className="space-y-3">
-                      {treatment.steps.map((step, index) => (
+                      {treatment?.steps?.map((step, index) => (
                         <li key={index} className="flex items-center text-cyan-700">
                           <span className="w-8 h-8 flex items-center justify-center bg-primary/10 text-primary rounded-full mr-3 text-sm font-semibold">
                             {index + 1}
@@ -82,9 +82,9 @@ export default function TreatmentModal() {
                   </div>
 
                   <div>
-                    <h4 className="text-2xl font-semibold text-primary mb-4">Beneficios</h4>
+                    <h4 className="text-2xl font-semibold text-cyan-800 mb-4">Beneficios</h4>
                     <ul className="grid grid-cols-2 gap-4">
-                      {treatment.benefits.map((benefit, index) => (
+                      {treatment?.benefits?.map((benefit, index) => (
                         <li key={index} className="flex items-center text-cyan-700">
                           <span className="w-8 h-8 flex items-center justify-center bg-primary/10 text-primary rounded-full mr-3">
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -107,8 +107,8 @@ export default function TreatmentModal() {
                     Cerrar
                   </button>
                 </div>
-              </Dialog.Panel>
-            </Transition.Child>
+              </DialogPanel>
+            </TransitionChild>
           </div>
         </div>
       </Dialog>

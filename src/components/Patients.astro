@@ -29,10 +29,10 @@ const cases = [
 
 <section id="patients" class="py-20 bg-gray-50">
   <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-bold text-center mb-4" data-aos="fade-up">
+    <h2 class="text-3xl font-bold text-center mb-4 text-primary" data-aos="fade-up">
       CASOS DE ÉXITO
     </h2>
-    <p class="text-gray-600 text-center mb-12" data-aos="fade-up">
+    <p class="text-center mb-12 text-cyan-700" data-aos="fade-up">
       Las sonrisas de nuestros pacientes hablan por sí solas
     </p>
 
@@ -44,12 +44,12 @@ const cases = [
             data-aos="fade-up"
             data-aos-delay={index * 100}
           >
-            <h3 class="text-xl font-semibold mb-3">{title}</h3>
+            <h3 class="text-xl font-semibold mb-3 text-cyan-800">{title}</h3>
             <div class="image-compare">
               <img src={before} alt={`Antes - ${title}`} />
               <img src={after} alt={`Después - ${title}`} />
             </div>
-            <p class="mt-4">{description}</p>
+            <p class="mt-4 text-cyan-700">{description}</p>
             <div class="flex items-center justify-between">
               <div class="flex items-center">
                 {Array.from({ length: rating }).map(() => (
@@ -58,7 +58,7 @@ const cases = [
                   </svg>
                 ))}
               </div>
-              <span class="text-sm">Duración del procedimiento: {timeframe}</span>
+              <span class="text-sm text-cyan-700">Duración del procedimiento: {timeframe}</span>
             </div>
           </div>
         ))
