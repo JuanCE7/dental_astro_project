@@ -4,61 +4,69 @@ const defaultMessage = "Hola, me gustaría agendar una cita.";
 ---
 
 <section class="py-20 bg-gray-50" id="contact">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-bold text-center mb-12 text-primary" data-aos="fade-down">CONTÁCTANOS</h2>
+  <div class="max-w-7xl mx-auto px-4">
+    <h2
+      class="text-4xl font-bold text-center mb-12 text-primary"
+      data-aos="fade-down"
+    >
+      CONTÁCTANOS
+    </h2>
 
     <div class="flex flex-wrap -mx-4">
       <div class="w-full lg:w-1/2 px-4" data-aos="fade-right">
         <form id="contactForm" class="bg-gray-50 p-8 rounded-lg">
+          <h3 class="text-2xl font-bold mb-6 text-primary">Envíanos un Mensaje</h3>
           <div class="mb-6">
-            <input 
-              type="text" 
+            <input
+              type="text"
               id="name"
               name="name"
-              placeholder="NOMBRE" 
+              placeholder="NOMBRE"
               class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-primary"
               required
             />
           </div>
           <div class="mb-6">
-            <input 
-              type="tel" 
+            <input
+              type="tel"
               id="phone"
               name="phone"
-              placeholder="CELULAR" 
+              placeholder="CELULAR"
               class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-primary"
               required
             />
           </div>
           <div class="mb-6">
-            <input 
-              type="email" 
+            <input
+              type="email"
               id="email"
               name="email"
-              placeholder="CORREO" 
+              placeholder="CORREO"
               class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-primary"
               required
             />
           </div>
           <div class="mb-6">
-            <textarea 
+            <textarea
               id="message"
               name="message"
-              placeholder="MENSAJE" 
-              rows="4" 
-              class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-primary"
-              required
-            ></textarea>
+              placeholder="MENSAJE"
+              rows="4"
+              class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-primary resize-none"
+              required></textarea>
           </div>
-          <button 
-            type="submit" 
+          <button
+            type="submit"
             class="w-full bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full"
           >
-            ENVIAR
+            ENVIAR MENSAJE
           </button>
         </form>
       </div>
-      <div class="w-full h-full lg:w-1/2 p-8 flex justify-center" data-aos="fade-left">
+      <div
+        class="w-full h-full lg:w-1/2 p-8 flex justify-center"
+        data-aos="fade-left"
+      >
         <img
           src="/contact.webp"
           alt="Doctor"
@@ -66,6 +74,22 @@ const defaultMessage = "Hola, me gustaría agendar una cita.";
           width="450px"
           height="450px"
         />
+      </div>
+    </div>
+    <div class="mt-8 pt-8 border-t border-cyan-700">
+      <div class="grid grid-cols-3 gap-4 text-center">
+        <div>
+          <div class="text-2xl mb-2">🔒</div>
+          <p class="text-sm text-cyan-600">Datos Seguros</p>
+        </div>
+        <div>
+          <div class="text-2xl mb-2">⚡</div>
+          <p class="text-sm text-cyan-600">Respuesta Rápida</p>
+        </div>
+        <div>
+          <div class="text-2xl mb-2">💝</div>
+          <p class="text-sm text-cyan-600">Atención Personalizada</p>
+        </div>
       </div>
     </div>
   </div>

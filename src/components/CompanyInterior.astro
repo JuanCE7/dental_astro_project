@@ -52,34 +52,39 @@ const interiores = [
 ---
 
 <section id="interior" class="py-20 bg-white">
-  <h2 class="text-3xl font-bold text-center mb-4 text-primary" data-aos="fade-down">
-    NUESTRAS INSTALACIONES
-  </h2>
-  <p
-    class="text-center mb-12 text-lg max-w-2xl mx-auto text-cyan-700"
-    data-aos="fade-up"
-    data-aos-duration="1000"
-    data-aos-delay="200"
-  >
-    Contamos con espacios modernos, cómodos y equipados con tecnología de última
-    generación para brindarte una experiencia segura y agradable.
-  </p>
-  <div class="container mx-auto px-4" data-aos="fade-left">
-    <div class="swiper clinic-carousel">
-      <div class="swiper-wrapper">
-        {
-          interiores.map((interior) => (
-            <div class="swiper-slide">
-              <img
-                src={interior.image}
-                alt="Clínica 1"
-                class="w-full h-96 object-cover rounded-lg"
-              />
-            </div>
-          ))
-        }
+  <div class="max-w-7xl mx-auto px-4">
+    <h2
+      class="text-4xl font-bold text-center mb-4 text-primary"
+      data-aos="fade-down"
+    >
+      NUESTRAS INSTALACIONES
+    </h2>
+    <p
+      class="text-center mb-12 text-lg max-w-2xl mx-auto text-cyan-700"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-delay="200"
+    >
+      Contamos con espacios modernos, cómodos y equipados con tecnología de
+      última generación para brindarte una experiencia segura y agradable.
+    </p>
+    <div class="container mx-auto px-4" data-aos="fade-left">
+      <div class="swiper clinic-carousel">
+        <div class="swiper-wrapper">
+          {
+            interiores.map((interior) => (
+              <div class="swiper-slide">
+                <img
+                  src={interior.image}
+                  alt="Clínica 1"
+                  class="w-full h-96 object-cover rounded-lg"
+                />
+              </div>
+            ))
+          }
+        </div>
+        <div class="swiper-pagination"></div>
       </div>
-      <div class="swiper-pagination"></div>
     </div>
   </div>
 </section>

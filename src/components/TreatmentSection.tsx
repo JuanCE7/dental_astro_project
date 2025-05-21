@@ -18,7 +18,7 @@ export default function TreatmentsSection({ services }: Props) {
   const [selectedTreatment, setSelectedTreatment] = useState<Treatment | null>(null)
 
   return (
-    <section className="py-20 bg-gray-50" id="treatments">
+    <section className="bg-gray-50 max-w-7xl mx-auto px-4" id="treatments">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-4 text-primary">
           NUESTROS TRATAMIENTOS
